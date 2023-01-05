@@ -13,14 +13,14 @@ def register():
   match_password = re.findall(password_pattern, password)
 
   if match_email == []:
-    print("Invalid Email, Please Try Again")
+    print("Invalid Email, Please Try Again\n")
     register()
   elif match_password == []:
-    print("Invalid Password, Please Try Again")
+    print("Invalid Password, Please Try Again\n")
     register()
   else:
     data_file.write(email + ", " + password + "\n")
-    print("User Registered.")
+    print("User Registered.\n")
 
   data_file.close()
 
@@ -41,7 +41,7 @@ def login():
     data = dict(zip(d, f))
 
   if (email, password) in data.items():
-    print("Logged in Successfully.")
+    print("Logged in Successfully.\n")
   else:
     print("User not found, Please Register\n")
     register()
